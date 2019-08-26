@@ -37,3 +37,5 @@ node_modules
 
 yarn.lock
 yarn-error.log
+
+src/__tests__/__snapshots__
