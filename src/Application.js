@@ -2,6 +2,6 @@ import React from 'react';
 
 export default () => (
   <p>
-    Application
+    Boilerplate application, that uses react testing library
   </p>
 )
