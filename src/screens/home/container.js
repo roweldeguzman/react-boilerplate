@@ -12,7 +12,7 @@ function Container (props) {
 
   return(
     <div style={{ textAlign: "center" }}>
-      Boilerplate application, that uses react testing library
+      Boilerplate application, that uses react testing library, redux, react suspense, react lazy
       
       <p>
         { counter }
@@ -20,7 +20,7 @@ function Container (props) {
       
       <button type="button" onClick={onClickMinus}>Minus</button>
       <button type="button" onClick={onClickAdd}>Add</button>
-      
+
     </div>
   )
 }
