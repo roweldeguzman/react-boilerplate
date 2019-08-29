@@ -4,13 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-	entry: [
-		'webpack-dev-server/client?http://localhost:8080',
-		'webpack/hot/dev-server',
-		'./src/index'
-  ],
+	entry: './src/index',
   devServer: {
-    contentBase: './public',
+    contentBase: path.join(__dirname, 'public'),
     historyApiFallback: true,
     proxy: {
       '/api/*': {
@@ -19,13 +15,13 @@ module.exports = {
         changeOrigin: true
       },
     },
-    publicPath: '/public',
+    publicPath: '/',
     hot: true
   },
 	output: {
-    path: __dirname,
+    path: path.join(__dirname, 'public/'),
     filename: 'bundle.js',
-    publicPath: '/public'
+    publicPath: '/'
 	},
 	resolve: {
 		extensions: ['.js', '.jsx']
