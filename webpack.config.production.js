@@ -27,7 +27,7 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: 'public/index.prod.html',
+      template: 'public/index.html',
       filename: 'index.html',
       minify: {
         removeComments: true,
