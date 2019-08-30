@@ -14,18 +14,12 @@ export default () => {
     router: connectRouter(history),
     ...defaultStore
   }
-  const middleware  = [];
-  const enhancers   = [];
+  
   const rootReducer = combineReducers(reducerMap);
-
-  middleware.push(thunkMiddleware);
-  middleware.push(routerMiddleware(history))
-  enhancers.push(applyMiddleware(...middleware));
-
+  const enhancers = applyMiddleware(thunkMiddleware, routerMiddleware(history));
   const composeEnhancers = windowGlobal.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? windowGlobal.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({ }) : compose;
-  const enhancer = composeEnhancers(...enhancers);
+  const enhancer = composeEnhancers(enhancers);
   const store = createStore(rootReducer,enhancer);
-
 
   return { store, history };
 }
