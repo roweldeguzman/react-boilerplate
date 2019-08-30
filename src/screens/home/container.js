@@ -1,25 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Counter from './components/counter';
+
 function Container (props) {
-
-  const {
-    counter,
-    onClickAdd,
-    onClickMinus
-  } = props;
-
 
   return(
     <div style={{ textAlign: "center" }}>
       Boilerplate application, that uses react testing library, redux, react suspense, react lazy
       
-      <p>
-        { counter }
-      </p>
-      
-      <button type="button" onClick={onClickMinus}>Minus</button>
-      <button type="button" onClick={onClickAdd}>Add</button>
+      <Counter {...props} />
 
     </div>
   )

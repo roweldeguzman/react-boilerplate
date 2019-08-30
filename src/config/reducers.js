@@ -1,4 +1,4 @@
-import screen from '../store/reducers';
+import screen from '../screens/reducer';
 
 export default {
   screen
