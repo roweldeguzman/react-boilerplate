@@ -11,13 +11,27 @@ function Counter(props) {
   } = props;
 
   return(
-    <CounterWrapper>
-      <p>
+    <CounterWrapper className="counter-wrapper">
+      <p
+        data-testid="counter"
+      >
         { counter }
       </p>
       
-      <button type="button" onClick={onClickMinus}>Minus</button>
-      <button type="button" onClick={onClickAdd}>Add</button>
+      <button
+        type="button"
+        data-testid="minus"
+        onClick={onClickMinus}
+      >
+        Minus
+      </button>
+      <button
+        type="button"
+        data-testid="add"
+        onClick={onClickAdd}
+      >
+        Add
+      </button>
     </CounterWrapper>
   )
 }
