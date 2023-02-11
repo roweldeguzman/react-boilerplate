@@ -1,9 +1,27 @@
-import React, { lazy, Suspense } from 'react'
+import React, { lazy, Suspense, useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom';
 
 const Home = lazy(() => import('./screens/home'));
+const SecondComponent = lazy(() => import("./screens/second"));
+const ThirdComponent = lazy(() => import("./screens/third"));
 
-const LoadingMessage = () => ("Loading...")
+
+function Loader() {
+  useEffect(() => {
+    console.log("mounting...")
+
+    return () => {
+      console.log("unmount...")
+    }
+  }, [])
+  return(
+    <div>
+      message
+    </div>
+  )
+}
+
+const LoadingMessage = () => <Loader />
 
 export default () => (
 
@@ -12,7 +30,9 @@ export default () => (
     <Switch>
 
       <Route path="/" exact component={Home} />
-            
+      <Route path="/second" exact component={SecondComponent} />
+      <Route path="/third" exact component={ThirdComponent} />
+
     </Switch>
 
   </Suspense>
